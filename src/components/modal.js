@@ -1,10 +1,5 @@
 export {openPopup, closePopup }; 
  
-const closeBtns = document.querySelectorAll('.popup__close');
-closeBtns.forEach(btn => {
-  btn.addEventListener('click', closeByButton);
-});
-
 function openPopup (popup){ 
   popup.classList.add('popup_is-opened', 'popup_is-animated');  
   document.addEventListener('keydown', closeByEsc); 
@@ -14,7 +9,6 @@ function openPopup (popup){
 function closePopup(popup) { 
   popup.classList.remove('popup_is-opened', 'popup_is-animated'); 
   document.removeEventListener('keydown', closeByEsc); 
-  popup.removeEventListener('click', closeByOverlay); 
 } 
  
 function closeByEsc (event) { 
@@ -31,9 +25,3 @@ function closeByOverlay (event) {
   } 
 } 
  
-function closeByButton (event) { 
-  if (event.target.closest('.popup__close')) { 
-    const popup = document.querySelector('.popup_is-opened'); 
-    closePopup(popup); 
-  }
-}

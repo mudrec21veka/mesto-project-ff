@@ -76,3 +76,8 @@ function submitAddCardForm(event) {
   formElementNewPlace.reset();
   closePopup(popupAdd);
 }
+
+document.querySelectorAll('.popup__close').forEach(button => {
+  const buttonsPopup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(buttonsPopup));
+});
