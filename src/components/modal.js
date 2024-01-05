@@ -9,7 +9,6 @@ function openPopup (popup){
   popup.classList.add('popup_is-opened', 'popup_is-animated');  
   document.addEventListener('keydown', closeByEsc); 
   popup.addEventListener('click', closeByOverlay); 
-  const closeBtn = popup.querySelector('.popup__close');  
 }
  
 function closePopup(popup) { 
