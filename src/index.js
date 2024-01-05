@@ -10,6 +10,7 @@ const popupEdit = document.querySelector('.popup_type_edit');
 const popupAdd = document.querySelector('.popup_type_new-card');
 const popupTypeImage = document.querySelector('.popup_type_image');
 const popupImage = document.querySelector('.popup__image');
+const popupCaption = document.querySelector('.popup__caption');
 const formElementNewPlace = document.querySelector('.popup__form[name="new-place"]');
 const formElementProfile = document.querySelector('.popup__form[name="edit-profile"]');
 const nameInput = document.querySelector('.popup__input_type_name');
@@ -39,6 +40,7 @@ function openCardImage(event) {
   openPopup (popupTypeImage);
   popupImage.src = cardImage.src;
   popupImage.alt = cardImage.alt;
+  popupCaption.textContent = cardImage.alt;
 }
 
 buttonOpenEditProfilePopup.addEventListener('click', function() {
