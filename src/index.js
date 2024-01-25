@@ -3,6 +3,7 @@ import { initialCards } from './components/cards.js';
 import { createCard, deleteCard, likeCard } from './components/card.js';
 import { openPopup, closePopup } from './components/modal.js';
 
+
 const cardList = document.querySelector('.places__list');
 const buttonOpenEditProfilePopup = document.querySelector('.profile__edit-button');
 const buttonOpenAddCardPopup = document.querySelector('.profile__add-button');
@@ -81,3 +82,20 @@ document.querySelectorAll('.popup__close').forEach(button => {
   const buttonsPopup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(buttonsPopup));
 });
+
+
+
+
+
+import { enableValidation } from './components/validate.js';
+
+const formConfiguration = {
+  formSelector: '.popup__form',
+  buttonSelector: '.popup__button',
+  inputSelector: '.popup__input',
+  inputErrorClass: 'popup__input_type_error',
+};
+
+
+
+enableValidation(formConfiguration);
