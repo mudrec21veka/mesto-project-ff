@@ -1,27 +1,20 @@
-export {openPopup, closePopup }; 
- 
+//Функция открытия popup
 function openPopup (popup){ 
-  popup.classList.add('popup_is-opened', 'popup_is-animated');  
+  popup.classList.add('popup_is-opened', 'popup_is-animated');
   document.addEventListener('keydown', closeByEsc); 
-  popup.addEventListener('click', closeByOverlay); 
 }
- 
+ //Функция закрытия popup
 function closePopup(popup) { 
   popup.classList.remove('popup_is-opened', 'popup_is-animated'); 
   document.removeEventListener('keydown', closeByEsc); 
 } 
- 
+//Функция закрытия popup по Esc
 function closeByEsc (event) { 
   if (event.key === 'Escape') { 
-    const popup = document.querySelector('.popup_is-opened'); 
-    closePopup(popup); 
+    const openPopup = document.querySelector('.popup_is-opened'); 
+    closePopup(openPopup); 
   } 
-} 
- 
-function closeByOverlay (event) { 
-  if (event.target === event.currentTarget) { 
-    const popup = event.currentTarget; 
-    closePopup(popup); 
-  } 
-} 
+}
+
+export {openPopup, closePopup}; 
  
