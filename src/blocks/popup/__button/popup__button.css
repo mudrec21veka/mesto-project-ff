@@ -19,12 +19,21 @@
   cursor: pointer;
 }
 
-.popup__button_disabled {
+.button_inactive {
   background: transparent;
   border: 1px solid #c4c4c4;
   border-radius: 2px;
   color: #c4c4c4;
 }
+
+.button_inactive, .button_inactive:hover {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 2px;
+  color: rgba(0,0,0,.2);
+  cursor: pointer;
+}
+
 
 @media screen and (max-width: 568px) {
   .popup__button {
